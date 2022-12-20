@@ -59,11 +59,9 @@ function calculatorHT(TTC, TVA) {
   taxe = parseFloat(1)+parseFloat(TVA)
   let priceHT = TTC / taxe
   HT.value = priceHT.toFixed(2)
+  tvaPrice.innerHTML = taxe
+
 }
-
-
-
-
 
 
 let HTShow = document.querySelector('.HT_show');
