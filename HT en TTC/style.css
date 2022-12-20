@@ -1,0 +1,81 @@
+.convertisseur{
+    display: block;
+    background:rgb(211, 222, 222);
+    width: 600px;
+    height: 250px;
+    justify-content: center;
+    line-height: 40px;
+   
+}
+
+
+label{
+    font-size: 25px;
+    margin-left: 20px;
+    
+    
+}
+input{
+    margin-left: 120px;
+    height:  30px;
+    width: 200px;
+    border: 0.5px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    
+}
+
+#taux_tva{
+    
+    margin-left: 40px;
+    height:  30px;
+    width: 100px;
+    text-align: center;
+    font-size: 15px;
+    background-color: rgb(255, 255, 255);
+    border: 0.5px;
+    border-radius: 5px;
+
+}
+
+#convert_HT, #convert_TTC{
+    display: none;
+}
+
+#convert_HT.show, #convert_TTC.show{
+    display: flex;
+}
+
+.HT_show.show, .TTC_show.show {
+    background: rgb(239, 228, 228);
+}
+
+.result{
+    display: none;
+}
+
+.result.show {
+    display: block;
+}
+
+.container{
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choice{
+    width: 100%;
+    gap: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 26px;
+    font-weight: bold;
+}
+.choice > div{
+    background: grey;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+}
