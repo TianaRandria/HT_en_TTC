@@ -23,44 +23,64 @@
 // var result = document.querySelector(".result");
 // result.innerhtml = montantHT
 
-let HT = document.querySelector('#ht_price');
-let TVA = document.querySelector('#taux_tva');
-let TTC = document.querySelector('#ttc_price');
+
+
+
+
+
+
+//Display results
 let result = document.querySelector('.result');
 let tvaPrice = document.querySelector('#tva_price');
+//let convertTTC = document.querySelector('#convert_TTC');
 
-let convertTTC = document.querySelector('#convert_TTC');
+/**
+ * From HT to TTC
+ */
+let HT = document.querySelector('#ht_price');
+let TVAHT = document.querySelector('#taux_tva_ht');
+let resultTTC = document.getElementById('ttc_price_result');
 
 HT.addEventListener('keyup', () => {
-  calculatorTTC(HT.value, TVA.value)
+  calculatorTTC(HT.value, TVAHT.value);
 })
 
-TVA.addEventListener('change', () => {
-  calculatorTTC(HT.value, TVA.value)
-  calculatorHT(TTC.value, TVA.value)
-})
-
-
-TTC.addEventListener('keyup', () => {
-  calculatorHT(TTC.value, TVA.value)
+TVAHT.addEventListener('change', () => {
+  calculatorTTC(HT.value, TVAHT.value);
 })
 
 function calculatorTTC(HT, TVA) {
-  let taxe = HT*TVA
-  let priceTTC = parseFloat(HT)+parseFloat(taxe)
-  TTC.value = priceTTC
-  tvaPrice.innerHTML = taxe
-  result.classList.add('show')
+  let taxe = HT*TVA;
+  let priceTTC = parseFloat(HT)+parseFloat(taxe);console.log(priceTTC)
+  resultTTC.value = priceTTC.toFixed(2);
+  tvaPrice.innerHTML = taxe.toFixed(2);
+  result.classList.add('show');
 }
 
 
-function calculatorHT(TTC, TVA) {
-  console.log(TTC);
-  taxe = parseFloat(1)+parseFloat(TVA)
-  let priceHT = TTC / taxe
-  HT.value = priceHT.toFixed(2)
-  tvaPrice.innerHTML = taxe
 
+/**
+ * From TTC to HT
+ */
+let TVATTC = document.querySelector('#taux_tva_ttc');
+let TTC = document.getElementById('ttc_price');
+let resultHT = document.getElementById('ht_price_result');
+
+TTC.addEventListener('keyup', () => {
+  calculatorHT(TTC.value, TVATTC.value);
+})
+
+TVATTC.addEventListener('change', () => {
+  calculatorHT(TTC.value, TVATTC.value);
+})
+
+
+function calculatorHT(TTC, TVA) {
+  let taxe = parseFloat(1)+parseFloat(TVA);
+  let priceHT = TTC / taxe;
+  resultHT.value = priceHT.toFixed(2);
+  tvaPrice.innerHTML = (TTC - priceHT).toFixed(2);
+  result.classList.add('show');
 }
 
 

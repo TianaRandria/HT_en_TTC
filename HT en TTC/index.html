@@ -29,8 +29,8 @@
           </div>
           <div class="ht_group">
             <label>Taux TVA en %</label>
-            <select id="taux_tva" name="taux_tva" placeholder="Choisir le taux de TVA">
-              <option value="0.2"> 20% </option>
+            <select id="taux_tva_ht" name="taux_tva_ht" placeholder="Choisir le taux de TVA">
+              <option selected value="0.2"> 20% </option>
               <option value="0.1"> 10% </option>
               <option value="0.055"> 5.5% </option>
               <option value="0.021"> 2.1% </option>
@@ -41,7 +41,7 @@
           </div>
           <div class="ht_group">
             <label>Prix TTC</label>
-            <input type="number" id="ttc_price" name="ttc_price" step="0.1">
+            <input type="number" id="ttc_price_result" name="ttc_price_result" step="0.1">
           </div>
         </form>
       </div>
@@ -56,8 +56,8 @@
           </div>
           <div class="ht_group">
             <label>Taux TVA en %</label>
-            <select id="taux_tva" name="taux_tva" placeholder="Choisir le taux de TVA">
-              <option value="20"> 20% </option>
+            <select id="taux_tva_ttc" name="taux_tva_ttc" placeholder="Choisir le taux de TVA">
+              <option  value="0.2"> 20% </option>
               <option value="15.5"> 10% </option>
               <option value="5.5"> 5.5% </option>
               <option value="2.1"> 2.1% </option>
@@ -68,7 +68,7 @@
           </div>
           <div class="ht_group">
             <label>Prix HT</label>
-            <input type="number" id="ht_price" name="ht_price" step="0.1">
+            <input type="number" id="ht_price_result" name="ht_price_result" step="0.1">
           </div>
         </form>
       </div>
